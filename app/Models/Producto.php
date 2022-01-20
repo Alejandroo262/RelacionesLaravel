@@ -19,4 +19,8 @@ class Producto extends Model
         'updated_at',
         'remember_token',
     ];
+
+    public function relacion1a1(){
+        return $this->hasOne(Cliente::class);
+    }
 }

@@ -21,4 +21,7 @@ class Cliente extends Model
         'remember_token',
     ];
 
+    public function relacion1aN(){
+        return $this->hasMany(Producto::class);
+    }
 }
