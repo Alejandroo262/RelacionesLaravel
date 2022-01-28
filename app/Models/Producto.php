@@ -20,7 +20,7 @@ class Producto extends Model
         'remember_token',
     ];
 
-    public function relacion1a1(){
-        return $this->hasOne(Cliente::class);
+    public function clienteproductos(){
+        return $this->belongsTo(Cliente::class);
     }
 }
