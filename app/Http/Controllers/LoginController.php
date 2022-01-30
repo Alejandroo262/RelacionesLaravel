@@ -14,13 +14,16 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
+
         if(Auth::check()){
             return 'ya estabas logeado';
         }
 
-        if(Auth::attempt($credentials, true)){
+        if(Auth::attempt($credentials)){
+            session()->regenerate();
             return Auth::user()->toJson();
         }
         return 'Algo ha fallado';
+
     }
 }
